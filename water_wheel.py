@@ -1,17 +1,6 @@
 from flask import *  # Flask, render_template, request, redirect
 import pyrebase
 
-config = {
-    "apiKey": "AIzaSyDoawNiKjMq535l5del-gYI7iuLlBTcYp8",
-    "authDomain": "water-wheel-b5291.firebaseapp.com",
-    "databaseURL": "https://water-wheel-b5291.firebaseio.com",
-    "projectId": "water-wheel-b5291",
-    "storageBucket": "water-wheel-b5291.appspot.com",
-    "messagingSenderId": "849609847687",
-    "appId": "1:849609847687:web:2eabfa8da2c8784ebb9922",
-    "measurementId": "G-1K3FC27ZJ6"
-}
-
 firebase = pyrebase.initialize_app(config)
 
 db = firebase.database()
