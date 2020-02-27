@@ -11,17 +11,23 @@
         <h1>Overview</h1>
     </nav>
     <div class="jumbotron">
+<!-- Making a submission form for the category -->
         <form class="form-group" action="/" method="post">
-            <label for="name"> Enter all the tasks to be performed</label>
+            <label for="name"> Enter Category Name</label>
             <input type="text" name="name" class="form-control"><br>
             <button class="btn btn-primary" type="submit" name="submit" value="add">Submit</button>
             <button class="btn btn-danger" type="submit" name="submit" value="delete">Delete</button>
+        </form>
+<!-- Making another submission form for item -->
+        <form class="form-group" action="/" method="post">
+            <label for="item">Enter Item Name</label>
+            <input type="text" name="item" class="form-control"><br>
+            <button class="btn btn-primary" type="submit" name="submit" value="add">Submit</button>
         </form>
 
     </div>
 
     <div class="container-fluid">
-
         {% for l in t %}
             <ul class="list-group">
                 <li class="list-group-item">
@@ -30,6 +36,7 @@
             </ul>
         {% endfor %}
     </div>
+
 
 
 </body>

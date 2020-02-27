@@ -1,16 +1,9 @@
 from flask import *  # Flask, render_template, request, redirect
 import pyrebase
+import json
 
-config = {
-    "apiKey": "AIzaSyDoawNiKjMq535l5del-gYI7iuLlBTcYp8",
-    "authDomain": "water-wheel-b5291.firebaseapp.com",
-    "databaseURL": "https://water-wheel-b5291.firebaseio.com",
-    "projectId": "water-wheel-b5291",
-    "storageBucket": "water-wheel-b5291.appspot.com",
-    "messagingSenderId": "849609847687",
-    "appId": "1:849609847687:web:2eabfa8da2c8784ebb9922",
-    "measurementId": "G-1K3FC27ZJ6"
-}
+with open('config.json') as config_file:
+    config = json.load(config_file)
 
 firebase = pyrebase.initialize_app(config)
 
@@ -34,10 +27,15 @@ app = Flask(__name__)
 def basic():
     if request.method == 'POST':
         name = request.form['name']
-        db.child("todo").push(name)
-        todo = db.child("todo").get()
-        to = todo.val()
-        return render_template('overview.html', t=to.values())
+       # item_name = request.form['item']
+
+        db.child("category").push(name)
+        category = db.child("category").get()
+        cate = category.val()
+# Trying to make another table?
+       # db.child("item").push(item_name)
+
+        return render_template('overview.html', t=cate.values())
     return render_template('overview.html')
 
 
