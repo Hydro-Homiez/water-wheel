@@ -2,12 +2,9 @@ from flask import *  # Flask, render_template, request, redirect
 import pyrebase
 import json
 
-<<<<<<< HEAD
 with open('config.json') as config_file:
     config = json.load(config_file)
 
-=======
->>>>>>> df72ba78348c78b221e745e66e5fc19dc582762f
 firebase = pyrebase.initialize_app(config)
 
 db = firebase.database()
@@ -27,7 +24,7 @@ app = Flask(__name__)
 
 
 @app.route("/", methods=['GET', 'POST'])
-def basic():
+def overview():
     if request.method == 'POST':
         name = request.form['name']
        # item_name = request.form['item']
@@ -41,6 +38,13 @@ def basic():
         return render_template('overview.html', t=cate.values())
     return render_template('overview.html')
 
+@app.route("/about")
+def about():
+    return render_template('about.html')
+
+@app.route("/home")
+def home():
+    return render_template('home.html')
 
 
 
