@@ -2,9 +2,12 @@ from flask import *  # Flask, render_template, request, redirect
 import pyrebase
 import json
 
+<<<<<<< HEAD
 with open('config.json') as config_file:
     config = json.load(config_file)
 
+=======
+>>>>>>> df72ba78348c78b221e745e66e5fc19dc582762f
 firebase = pyrebase.initialize_app(config)
 
 db = firebase.database()
