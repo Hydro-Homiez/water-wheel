@@ -12,8 +12,8 @@ Team:
 Requirements to Run:
 * Python 3.7+ must be installed
 * Install PyCharm Community Edition
-* Run pip3 install Flask
-* Run pip3 install Pyrebase
+* Flask must be installed
+* Pyrebase must be installed
 
 Steps: 
 1. Clone the repo 
@@ -23,6 +23,10 @@ Steps:
 5. Type into the terminal the commands below
 
 In the terminal: -- Do not include the '$'
+
+$ pip3 install flask
+
+$ pip3 install pyrebase
 
 $ export FLASK_APP=water_wheel.py
 
